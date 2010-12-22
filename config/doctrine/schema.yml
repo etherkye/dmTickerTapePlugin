@@ -1,0 +1,9 @@
+DmTickerTape:
+  actAs:
+    DmSortable:
+    Timestampable:
+  columns:
+    title:            { type: string(120), notnull: true }
+    message:          { type: string(255), notnull: true }
+    url:              { type: string(255), notnull: true, extra: link }
+    is_active:        { type: boolean, notnull: true, default: true }

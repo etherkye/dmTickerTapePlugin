@@ -1,0 +1,45 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: DmTickerTape
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: dm_ticker_tape
+    with_doctrine_route: false
+    config:
+      actions: ~
+      fields:
+        is_active:
+          label: Active
+      list:
+        display:
+          - '=title'
+          - message
+          - url
+          - is_active
+          - created_at
+          - updated_at
+        sort:
+          - position
+          - asc
+        table_method: getAdminListQuery
+        table_count_method: ~
+        sortable: true
+      filter:
+        display:
+          - title
+          - is_active
+          - message
+          - url
+          - created_at
+          - updated_at
+      form:
+        display:
+          NONE: [title, is_active]
+          Others: [message, url]
+        class: DmTickerTapeAdminForm
+        fields:
+          url: { is_link: true, help: 'Drag & drop a page here from the PAGES panel, or write an url' }
+      edit: ~
+      new: ~

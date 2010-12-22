@@ -1,0 +1,11 @@
+js:
+
+  dmTickerTapePlugin:
+
+    view:      view
+
+css:
+
+  dmTickerTapePlugin:
+
+    view:      min-style
